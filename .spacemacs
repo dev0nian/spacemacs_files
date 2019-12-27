@@ -292,7 +292,7 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup trailing
+   dotspacemacs-whitespace-cleanup `trailing
    ))
 
 (defun dotspacemacs/user-init ()
@@ -315,8 +315,11 @@ you should place your code here."
   (setq hybrid-mode-enable-hjkl-bindings t)
   (setq dotspacemacs-mode-line-unicode-symbols nil)
   (setq scroll-margin 10)
-  ;;(setq explicit-shell-file-name "c:/Windows/System32/bash.exe")
-  (setq powerline-default-separator 'slant))
+  (setq powerline-default-separator 'slant)
+  ;;(setq helm-ag-base-command "c:/ProgramData/chocolatey/bin/ag.exe --vimgrep")
+  (setq js-indent-level 2)
+  (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
+  (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
