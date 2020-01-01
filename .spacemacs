@@ -319,7 +319,8 @@ you should place your code here."
   ;;(setq helm-ag-base-command "c:/ProgramData/chocolatey/bin/ag.exe --vimgrep")
   (setq js-indent-level 2)
   (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
-  (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on))
+  (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+  (setq make-backup-files nil))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
