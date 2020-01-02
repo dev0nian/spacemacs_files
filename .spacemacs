@@ -199,7 +199,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(spacemacs :separator slant :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -470,7 +470,6 @@ before packages are loaded."
   (setq hybrid-mode-enable-hjkl-bindings t)
   (setq dotspacemacs-mode-line-unicode-symbols nil)
   (setq scroll-margin 15)
-  (setq powerline-default-separator 'slant)
   (setq helm-ag-base-command "C:/development/dev-tools/rg.exe --vimgrep --no-heading")
   (setq js-indent-level 2)
   (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
