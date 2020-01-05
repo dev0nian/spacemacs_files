@@ -70,7 +70,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(evil-search-highlight-persist)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -472,6 +472,10 @@ before packages are loaded."
   (setq scroll-margin 15)
   (setq helm-ag-base-command "C:/development/dev-tools/rg.exe --vimgrep --no-heading")
   (setq js-indent-level 2)
+  (setq web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
+  (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
+  (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
+  (setq css-indent-offset 2) ; css-mode
   (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
   (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (setq make-backup-files nil))
