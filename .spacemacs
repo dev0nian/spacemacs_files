@@ -471,14 +471,19 @@ before packages are loaded."
   (setq dotspacemacs-mode-line-unicode-symbols nil)
   (setq scroll-margin 15)
   (setq helm-ag-base-command "C:/development/dev-tools/rg.exe --vimgrep --no-heading")
+  (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
+  (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+  (setq make-backup-files nil)
+  (javascript-user-config))
+
+(defun javascript-user-config ()
   (setq js-indent-level 2)
   (setq web-mode-markup-indent-offset 2) ; web-mode, html tag in html file
   (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
   (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
   (setq css-indent-offset 2) ; css-mode
-  (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
-  (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
-  (setq make-backup-files nil))
+  (setq js2-mode-show-parse-errors nil) ; Disable js2-errors
+  (setq js2-mode-show-strict-warnings nil)) ; Disable js2-warnings
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
