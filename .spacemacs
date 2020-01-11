@@ -40,11 +40,13 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      html
      javascript
+     typescript
      helm
      auto-completion
      emacs-lisp
      git
      org
+     vinegar
      ;; lsp
      ;; markdown
      ;; multiple-cursors
@@ -64,13 +66,13 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(gnu-elpa-keyring-update)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-search-highlight-persist)
+   dotspacemacs-excluded-packages '(evil-search-highlight-persist org-brain)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -451,7 +453,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  )
+  (setq vinegar-reuse-dired-buffer t))
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -474,6 +476,7 @@ before packages are loaded."
   (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
   (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (setq make-backup-files nil)
+  (setq projectile-globally-ignored-directories '(".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules"))
   (javascript-user-config))
 
 (defun javascript-user-config ()
