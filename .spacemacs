@@ -453,14 +453,15 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq vinegar-reuse-dired-buffer t))
+  )
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-  )
+  (setq treemacs-follow-mode nil)
+  (setq vinegar-reuse-dired-buffer t))
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -485,6 +486,7 @@ before packages are loaded."
   (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
   (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
   (setq css-indent-offset 2) ; css-mode
+  (setq typescript-indent-level 2) ; typescript indentation
   (setq js2-mode-show-parse-errors nil) ; Disable js2-errors
   (setq js2-mode-show-strict-warnings nil)) ; Disable js2-warnings
 
