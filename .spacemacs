@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
      git
      org
      vinegar
-     ;; lsp
+     lsp
      ;; markdown
      ;; multiple-cursors
      ;; (shell :variables
@@ -485,6 +485,7 @@ before packages are loaded."
   (setq web-mode-css-indent-offset 2) ; web-mode, css in html file
   (setq web-mode-code-indent-offset 2) ; web-mode, js code in html file
   (setq css-indent-offset 2) ; css-mode
+  (setq typescript-indent-level 2) ; typescript
   (setq js2-mode-show-parse-errors nil) ; Disable js2-errors
   (setq js2-mode-show-strict-warnings nil)) ; Disable js2-warnings
 
