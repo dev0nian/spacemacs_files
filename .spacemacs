@@ -72,7 +72,31 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(evil-search-highlight-persist org-brain)
+   dotspacemacs-excluded-packages
+   '(
+     evil-search-highlight-persist
+     writeroom-mode ;some distraction-free package for writers
+     volatile-highlights ;highlights some words on specific actions. Couldn't figure it out
+     tagedit ;structurally edit html, vim editing should be enough
+     symon ;tiny system monitor. not used
+     symbol-overlay ; highlight programming language symbols with an overlay
+     smeargle ; Highlight regions in a git project by last updated time
+     slim-mode ; Edit slim templates (templating in Ruby)
+     pug-mode ; Edit jade/pug templates
+     password-generator
+     paradox ; nicer packages menu (used when running list-packages)
+     overseer ; Some ert-runner integration (something to do with running tests)
+     ob-elixir ; Using elixir in org-babel or something
+     nameless ; Hides namespaces in elisp code
+     magit-svg ; Support for something called "git svn"
+     magit-gitflow ; Support for something called "git flow"
+     macrostep ; Interactively step through elisp macros
+     indent-guide ; Visual indicator for indents
+     hungry-delete ; Something about whitespace deletion. Didn't work as expected
+     htmlize ; Convert buffer/file to html
+     hl-todo ; highlight todos in org file and navigate between them
+     highlight-indentation ; highlights indentation
+     commander)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -335,7 +359,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil unicode symbols are displayed in the mode line.
    ;; If you use Emacs as a daemon and wants unicode characters only in GUI set
    ;; the value to quoted `display-graphic-p'. (default t)
-   dotspacemacs-mode-line-unicode-symbols t
+   dotspacemacs-mode-line-unicode-symbols nil
 
    ;; If non-nil smooth scrolling (native-scrolling) is enabled. Smooth
    ;; scrolling overrides the default behavior of Emacs which recenters point
@@ -453,15 +477,14 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  )
+  (setq vinegar-reuse-dired-buffer t))
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
 dump."
-  (setq treemacs-follow-mode nil)
-  (setq vinegar-reuse-dired-buffer t))
+  )
 
 (defun dotspacemacs/user-config ()
   "Configuration for user code:
@@ -471,7 +494,6 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (evil-select-search-module 'evil-search-module 'evil-search)
   (setq hybrid-mode-enable-hjkl-bindings t)
-  (setq dotspacemacs-mode-line-unicode-symbols nil)
   (setq scroll-margin 15)
   (setq helm-ag-base-command "C:/development/dev-tools/rg.exe --vimgrep --no-heading")
   (add-hook 'org-mode-hook 'spacemacs/toggle-truncate-lines-off)
