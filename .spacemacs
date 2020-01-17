@@ -47,7 +47,7 @@ This function should only modify configuration layer settings."
      git
      org
      vinegar
-     ;; lsp
+     lsp
      ;; markdown
      ;; multiple-cursors
      ;; (shell :variables
