@@ -111,7 +111,6 @@ This function should only modify configuration layer settings."
      dash-functional ; Collection of useful combinators for elisp
      clean-aindent-mode ; Indentation utility
      centered-cursor-mode ; Keeps point in center, page moves instead when scrolling
-     auto-yasnippet ; Quickly create disposable snippets
      auto-highlight-symbol ; Highlight symbols or something
      ace-window ; Something about window switching
      ace-link ; Something about jumping to links
