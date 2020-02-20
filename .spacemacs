@@ -517,6 +517,7 @@ before packages are loaded."
   (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (setq make-backup-files nil)
   (setq projectile-globally-ignored-directories '(".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules"))
+  ;(setq magit-repository-directories '(("/home/devn/development/repos/" . 2)))
   (javascript-user-config))
 
 (defun javascript-user-config ()
