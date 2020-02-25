@@ -494,6 +494,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq browse-url-browser-function 'browse-url-firefox)
   (setq vinegar-reuse-dired-buffer t))
 
 (defun dotspacemacs/user-load ()
