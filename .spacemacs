@@ -93,16 +93,14 @@ This function should only modify configuration layer settings."
      macrostep ; Interactively step through elisp macros
      indent-guide ; Visual indicator for indents
      hungry-delete ; Something about whitespace deletion. Didn't work as expected
+     org-brain ; Needs emacs 26.1 or above it seems like
      htmlize ; Convert buffer/file to html
      hl-todo ; highlight todos in org file and navigate between them
      highlight-indentation ; highlights indentation
-     org-brain ; Something like nodes in org mode
      google-translate ; Google translate integration
      flycheck-package ; flychecking for elisp packages
      package-lint ; linter for emacs lisp metadata
      gnuplot ;drive gnuplot from emacs
-     flx-ido ; fuzzy searching for ido(?)
-     flx ; fuzzy searching for file search, not sure how it's used
      evil-tutor ; tutor for vim mode
      emmet-mode ; templates for web-development, different from yasnippet
      shrink-path ; shrink paths in eshell
@@ -112,7 +110,6 @@ This function should only modify configuration layer settings."
      clean-aindent-mode ; Indentation utility
      centered-cursor-mode ; Keeps point in center, page moves instead when scrolling
      auto-highlight-symbol ; Highlight symbols or something
-     ace-window ; Something about window switching
      ace-link ; Something about jumping to links
      ace-jump-helm-line ; Ace jump to candidate in helm window
      avy ; Jump to arbitrary positions in visible text
@@ -252,8 +249,8 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-colorize-cursor-according-to-state t
 
    ;; Default font or prioritized list of fonts.
-   dotspacemacs-default-font '("Consolas"
-                               :size 11.0 :weight normal :width normal)
+   dotspacemacs-default-font '("Roboto Mono"
+                               :size 10.0 :weight normal :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -497,6 +494,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq browse-url-browser-function 'browse-url-firefox)
   (setq vinegar-reuse-dired-buffer t))
 
 (defun dotspacemacs/user-load ()
@@ -520,8 +518,7 @@ before packages are loaded."
   (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (setq make-backup-files nil)
   (setq projectile-globally-ignored-directories '(".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules"))
-  ;(setq magit-repository-directories '(("/path/to/dir") ("path/to/dir2")))
-  (spacemacs/set-leader-keys "zm" 'hs-hide-level)
+  ;(setq magit-repository-directories '(("/home/devn/development/repos/" . 2)))
   (javascript-user-config))
 
 (defun javascript-user-config ()
