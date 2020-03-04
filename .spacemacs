@@ -520,6 +520,8 @@ before packages are loaded."
   (setq projectile-globally-ignored-directories '(".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules"))
   ;(setq magit-repository-directories '(("/home/devn/development/repos/" . 2)))
   (spacemacs/set-leader-keys "zm" 'hs-hide-level)
+  ;consider _ (underscore) as a word character (similar to vim's isKeyword)
+  (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
   (javascript-user-config))
 
 (defun javascript-user-config ()
