@@ -404,7 +404,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers `relative
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
@@ -520,6 +520,8 @@ before packages are loaded."
   (add-hook 'org-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   (setq make-backup-files nil)
   (setq projectile-globally-ignored-directories '(".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "node_modules"))
+  ;(setq magit-repository-directories '(("/path/to/dir") ("path/to/dir2")))
+  (spacemacs/set-leader-keys "zm" 'hs-hide-level)
   (javascript-user-config))
 
 (defun javascript-user-config ()
