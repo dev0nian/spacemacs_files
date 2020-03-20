@@ -32,7 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(csv
+     racket
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -522,6 +523,7 @@ before packages are loaded."
   (spacemacs/set-leader-keys "zm" 'hs-hide-level)
   ;consider _ (underscore) as a word character (similar to vim's isKeyword)
   (add-hook 'prog-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
+  (setq flycheck-checker-error-threshold 800)
   (javascript-user-config))
 
 (defun javascript-user-config ()
